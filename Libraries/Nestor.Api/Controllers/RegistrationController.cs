@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Nestor.Api.Controllers.DTO;
 using Nestor.Domain;
@@ -8,6 +9,7 @@ using System.Text.Json;
 
 namespace Nestor.Api.Controllers
 {
+    /*
     [ApiController]
     [Route("[controller]")]
     public partial class RegistrationController : ControllerBase //, IRegistrationController
@@ -25,7 +27,8 @@ namespace Nestor.Api.Controllers
             _configuration = configuration;
             _registrationController = registrationController;
         }
-
+        
+        [Authorize]
         [HttpPost("[action]")]
         public ActionResult<string> EnregisterRegistrationInterest([FromBody] RegistrationInterestDTO registrationInterestDto)
         {
@@ -40,6 +43,7 @@ namespace Nestor.Api.Controllers
             return Ok(encrypted);
         }
 
+        [Authorize]
         [HttpPost("[action]")]
         public ActionResult<string> PerformRegistration([FromBody] RegistrationDTO registrationDto)
         {
@@ -58,6 +62,7 @@ namespace Nestor.Api.Controllers
                 return BadRequest("?");
             }
             return NotFound("?");
-        }
+        }    
     }
+    */
 }

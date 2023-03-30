@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Nestor.Api.Controllers.DTO;
 using Nestor.Domain;
 using Nestor.Domain.Controllers.Interfaces;
@@ -26,6 +27,7 @@ namespace Nestor.Api.Controllers
             _paymentController = paymentController;
         }
 
+        [Authorize]
         [HttpPost("[action]")]
         public ActionResult<string> AnnouncePaymentInterest([FromBody] PaymentInterestDTO paymentInterestDto)
         {
@@ -40,6 +42,7 @@ namespace Nestor.Api.Controllers
             return Ok(encrypted);
         }
 
+        [Authorize]
         [HttpPost("[action]")]
         public ActionResult<string> ExecutePayment([FromBody] PaymentDTO paymentDto)
         {

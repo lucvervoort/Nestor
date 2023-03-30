@@ -5,8 +5,7 @@ namespace Nestor.Domain.Controllers
 {
     public class RegistrationController : IRegistrationController
     {
-
-
+       
         public RegistrationRequestResult AnnounceRegistrationInterest(RegistrationRequest request)
         {
             var answer = new RegistrationRequestResult()
